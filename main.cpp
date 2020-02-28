@@ -1,28 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
+#include "uravnenie.h"
 using namespace std;
-class uravnenie{
-    double a,b,c;
-public:
-    uravnenie(){
-        a=0;
-        b=0;
-        c=0;
-    }
-    uravnenie(double d, double e, double f){
-        a=d;
-        b=e;
-        c=f;
-    }
-    void print(const char *f){
-        ofstream fout(f, ios::app);
-        fout <<a <<"xˆ2+" <<b <<"x+" <<c;
-    }
-    double discrim(){
-        return b*b-4*a*c;
-    }
-};
 int main() {
     int n;
     double a=0.0,b=0.0,c=0.0;
@@ -59,5 +38,7 @@ int main() {
         }
     }
     fout.close();
+    for (int i=0;i<n;i++) delete[] rav[i];
+    delete[] rav;
     return 0;
 }
