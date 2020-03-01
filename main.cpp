@@ -38,7 +38,7 @@ int main() {
         }
     }
     fout.close();
-    for (int i=0;i<n;i++) delete[] rav[i];
+    for (int i=0;i<n;i++) delete rav[i];
     delete[] rav;
     return 0;
 }
